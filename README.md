@@ -7,7 +7,7 @@ Downloads selected song from a iTunes album using YouTube as an audio source.
 * youtube_dl (pip install youtube_dl)
 * BeautifulSoup4 (pip install beautifulsoup4)
 * PYQT5 (pip install pyqt5)
-* ffmpeg (described in Installation#4+5)
+* ffmpeg (described in Installation#2+3)
 
 # Installation
 1. Make sure requirements are installed
