@@ -199,7 +199,7 @@ class Ui_MainWindow(object):
         json_data = json.loads(soup.find('script', type='fastboot/shoebox').text)
         album_title = json_data['data']['attributes']['name']
         genre = [i['attributes']['name'] for i in json_data['included'] if i['type'] == 'genre'][0]
-        song_raw = [i for i in json_data['included'] if i['type'] == 'song' and i['attributes']['trackNumber'] == self.spinBoxItunesTrack.value()][0]
+        song_raw = [i for i in json_data['included'] if i['type'] == 'product/album/song' and i['attributes']['trackNumber'] == self.spinBoxItunesTrack.value()][0]
         Focus_song_data = [song_raw['attributes']['name'],
                            album_title,
                            song_raw['attributes']['artistName'],
