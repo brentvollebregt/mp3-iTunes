@@ -52,7 +52,7 @@ def downloadYoutubeToMP3(link):
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(532, 320)
+        MainWindow.setFixedSize(532, 320)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("PythonIcon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
@@ -196,7 +196,7 @@ class Ui_MainWindow(object):
         soup = BeautifulSoup(file, 'html.parser')
         self.SetStaus("Parasing webpage")
 
-        json_data = json.loads(soup.find('script', type='fastboot/shoebox').text)
+        json_data = json.loads(soup.find('script', id='shoebox-ember-data-store').text)
         album_title = json_data['data']['attributes']['name']
         genre = [i['attributes']['name'] for i in json_data['included'] if i['type'] == 'genre'][0]
         song_raw = [i for i in json_data['included'] if i['type'] == 'product/album/song' and i['attributes']['trackNumber'] == self.spinBoxItunesTrack.value()][0]

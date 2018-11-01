@@ -1,0 +1,4 @@
+mutagen
+youtube_dl
+beautifulsoup4
+pyqt5
