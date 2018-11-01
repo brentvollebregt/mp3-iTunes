@@ -50,11 +50,8 @@ def downloadYoutubeToMP3(link):
 
 
 class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
+    def __init__(self, MainWindow):
         MainWindow.setFixedSize(532, 320)
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("PythonIcon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        MainWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.lineEditItunesURL = QtWidgets.QLineEdit(self.centralwidget)
         self.lineEditItunesURL.setGeometry(QtCore.QRect(50, 10, 381, 20))
@@ -104,7 +101,6 @@ class Ui_MainWindow(object):
         self.labelAlbumArt.setFrameShape(QtWidgets.QFrame.Box)
         self.labelAlbumArt.setFrameShadow(QtWidgets.QFrame.Plain)
         self.labelAlbumArt.setLineWidth(1)
-        self.labelAlbumArt.setText("")
         self.line_2 = QtWidgets.QFrame(self.centralwidget)
         self.line_2.setGeometry(QtCore.QRect(10, 200, 511, 21))
         self.line_2.setFrameShape(QtWidgets.QFrame.HLine)
@@ -252,7 +248,6 @@ class Ui_MainWindow(object):
 
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()
-ui = Ui_MainWindow()
-ui.setupUi(MainWindow)
+ui = Ui_MainWindow(MainWindow)
 MainWindow.show()
 sys.exit(app.exec_())
